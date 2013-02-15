@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mmiEvents"
+    nsURI="http://www.example.org/mmiEventsModel" nsPrefix="events">
+  <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputEvent" abstract="true" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OutputEvent" abstract="true" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DialogueContentEvent" abstract="true"
+      eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nitems" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetacommEvent" abstract="true" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TurnControlEvent" abstract="true" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TurnTimingEvent" abstract="true" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NavigationEvent" abstract="true" eSuperTypes="#//InputEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TextEvent" abstract="true" eSuperTypes="#//InputEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ScreenEvent" abstract="true" eSuperTypes="#//OutputEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TouchEvent" eSuperTypes="#//NavigationEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ClickEvent" eSuperTypes="#//NavigationEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LongClickEvent" eSuperTypes="#//NavigationEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemClickEvent" eSuperTypes="#//NavigationEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemLongClickEvent" eSuperTypes="#//NavigationEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="KeyEvent" eSuperTypes="#//TextEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WordEvent" eSuperTypes="#//TextEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FocusChangeEvent" eSuperTypes="#//ScreenEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VisibilityChangeEvent" eSuperTypes="#//ScreenEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChildViewAddedEvent" eSuperTypes="#//ScreenEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChildViewRemovedEvent" eSuperTypes="#//ScreenEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextMenuEvent" eSuperTypes="#//ScreenEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DragEvent" eSuperTypes="#//ScreenEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NewElementsEvent" eSuperTypes="#//DialogueContentEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NewConceptsEvent" eSuperTypes="#//DialogueContentEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NewNoiseEvent" eSuperTypes="#//DialogueContentEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NewQuestionEvent" eSuperTypes="#//DialogueContentEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HelpTurnEvent" eSuperTypes="#//MetacommEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CorrectionTurnEvent" eSuperTypes="#//MetacommEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CancelTurnEvent" eSuperTypes="#//MetacommEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RestartTurnEvent" eSuperTypes="#//MetacommEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DIV_RejectionEvent" eSuperTypes="#//MetacommEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeoutEvent" eSuperTypes="#//MetacommEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StartDialogueEvent" eSuperTypes="#//TurnControlEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EndDialogueEvent" eSuperTypes="#//TurnControlEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StartSystemTurnEvent" eSuperTypes="#//TurnControlEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EndSystemTurnEvent" eSuperTypes="#//TurnControlEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StartUserTurnEvent" eSuperTypes="#//TurnControlEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EndUserTurnEvent" eSuperTypes="#//TurnControlEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FeedbackStartEvent" eSuperTypes="#//TurnTimingEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionStartEvent" eSuperTypes="#//TurnTimingEvent"/>
+</ecore:EPackage>

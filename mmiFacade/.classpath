@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/mmiEvents.pool"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/mmiEvents.factory.generator"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/mmiEvents.emf"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/mmiModel.instantiator"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/mmiUtils"/>
+	<classpathentry exported="true" kind="lib" path="/mmiUtils/log4j-1.2.16.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/mmiModel.emf"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.emf.common_2.7.0.v20110912-0920.jar" sourcepath="lib/sources/org.eclipse.emf.common.source_2.7.0.v20110912-0920.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore_2.7.0.v20110912-0920.jar" sourcepath="lib/sources/org.eclipse.emf.ecore.source_2.7.0.v20110912-0920.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore.xmi_2.7.0.v20110520-1406.jar" sourcepath="lib/sources/org.eclipse.emf.ecore.xmi.source_2.7.0.v20110520-1406.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

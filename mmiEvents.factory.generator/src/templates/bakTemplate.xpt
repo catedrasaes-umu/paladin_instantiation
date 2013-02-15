@@ -1,0 +1,119 @@
+«IMPORT org::eclipse::emf::ecore»
+
+«EXTENSION templates::auxiliares»
+
+«DEFINE main FOR EPackage»
+«FILE "generated_qtlua_adapters.cpp"»
+
+/// generation start ////////////////////////////////////////////////////////////
+
+#include "generated_qtlua_adapters.h"
+
+///
+/// create adaptation methods
+///
+
+/// -------------------
+/// QString adaptations
+/// -------------------
+«EXPAND adapt_QString FOREACH EClassifiers.typeSelect(EClass).EOperations.select(e|e.EType.name == "QString")»
+
+/// ----------------------
+/// QDateTime* adaptations
+/// ----------------------
+«REM»«EXPAND adapt_QDateTimeEdit FOREACH EClassifiers.typeSelect(EClass).EOperations.select(e|e.name == "date" || e.name == "time")»«ENDREM»
+
+///
+/// create bindings
+///
+
+/// -----------------------
+/// adapters loading method
+/// -----------------------
+
+void QtLua_Adapters::LoadAdapters(lua_State *L)
+{
+
+«EXPAND binding FOREACH EClassifiers.typeSelect(EClass).select(e|!e.abstract)»
+
+«REM» «EXPAND templates::Otra::mia FOREACH EClassifiers.typeSelect(EClass)» «ENDREM»
+
+}
+
+/// generation end ////////////////////////////////////////////////////////////
+«ENDFILE»
+
+«ENDDEFINE»
+
+
+
+
+
+
+
+«REM» #################################################### «ENDREM»
+«REM» AquÃ­ empiezan las plantillas «ENDREM»
+«REM» #################################################### «ENDREM»
+
+«REM» Binding basis «ENDREM»
+«DEFINE binding FOR EClass»
+luabind::module(L) [
+        luabind::class_<«name»«getParentClass()»>("«name»")
+                «EXPAND binding FOREACH EOperations.select(e|e.name == e.EContainingClass.name)-»
+                «EXPAND binding FOREACH EOperations.select(e|e.name != e.EContainingClass.name)-»
+                «EXPAND binding FOREACH EReferences-»
+    ];
+«ENDDEFINE»
+
+«REM» Method binding, including not supported types «ENDREM»
+«DEFINE binding FOR EOperation»
+«getMethodBindingDefinition()-» «REM»&«((EClass)(this.eContainer())).name»::«name»)«ENDREM»
+«ENDDEFINE»
+
+«REM» member binding, including not supported types «ENDREM»
+«DEFINE binding FOR EReference»
+«getMemberBindingDefinition()-»
+«REM» .def_readwrite("time", &QTimeEdit::time) --- &«((EClass)(this.eContainer())).name»::«name»)«ENDREM»
+«ENDDEFINE»
+
+
+
+
+«REM» ########################## RESTOS ####################################### «ENDREM»
+
+«REM» Adaptation methods for not supported types «ENDREM»
+«REM» QString «ENDREM»
+«DEFINE adapt_QString FOR EOperation»
+// «EContainingClass.name»
+std::string QtLua_Adapters::«EContainingClass.name»_«name»(const «EContainingClass.name» *obj)
+{
+    return obj->«name»().toStdString();
+}
+«ENDDEFINE»
+
+
+«REM» QDateEdit and QDateTimeEdit (date section) «ENDREM»
+«REM» (for methods day, month, and year) «ENDREM»
+«REM» QTimeEdit and QDateTimeEdit (time section) «ENDREM»
+«REM» (for methods hour, minute, and second) «ENDREM»
+
+«REM»
+«DEFINE adapt_QDateTimeEdit FOR EOperation»
+// «EContainingClass.name» :: «name»
+std::string QtLua_Adapters::«EContainingClass.name»_«name»(const «EContainingClass.name» *obj)
+{
+    return obj->«getQDate_QTimeAdaptation()».«name»();
+}
+«ENDDEFINE»
+«ENDREM»
+
+«REM»
+«DEFINE adapt_QDateEdit FOR EOperation»
+// «EContainingClass.name» :: «name»
+std::string QtLua_Adapters::«EContainingClass.name»_«name»(const «EContainingClass.name» *obj)
+{
+    return obj->date().«name»();
+}
+«ENDDEFINE»
+«ENDREM»
+

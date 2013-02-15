@@ -1,0 +1,131 @@
+«IMPORT org::eclipse::emf::ecore»
+
+«EXTENSION templates::EventFactoryExtensions»
+
+«DEFINE main FOR EPackage»
+«FILE "EventFactory.java"»
+
+/// generation start ////////////////////////////////////////////////////////////
+
+//TODO fit package name
+package org.mmi.events.factory;
+
+//TODO fit import name
+import org.mmi.events.*;
+
+/**
+ * This class implements a customized Event factory.
+ * All the events are created with a concrete type value
+ * and using a common timestamp in milliseconds.
+ * 
+ * @author mateo-navarro.pedro
+ *
+ */
+public class EventFactory {
+
+	 private long baseTimestamp;
+
+   /**
+   * Constructor
+   */
+   public EventFactory()
+   {
+      resetTimestamp();
+   }
+   
+   ///
+   /// timestamp methods
+   ///
+   
+   public void resetTimestamp() {
+      baseTimestamp = System.currentTimeMillis();
+   }
+   
+   private long _currentTimestamp() {
+      return System.currentTimeMillis() - baseTimestamp;
+   }
+   
+   /**
+    * Methods to create events
+    * (not for abstract classes)
+    */
+    
+«EXPAND adapt_event FOREACH EClassifiers.typeSelect(EClass).select(e|!e.abstract)»
+}
+
+/// generation end ////////////////////////////////////////////////////////////
+«ENDFILE»
+«ENDDEFINE»
+
+
+
+
+
+
+
+
+
+
+
+
+«REM» #################################################### «ENDREM»
+«REM» Here start adapters «ENDREM»
+«REM» #################################################### «ENDREM»
+
+«REM» Adapter to create a building method for each no-abstract event type «ENDREM»
+«DEFINE adapt_event FOR EClass»
+   public «name» create«name»(«EXPAND atts_param_name_and_type FOR EAllAttributes.select(e|e.name != "type" && e.name != "timestamp")-»)
+   {
+      «name» e = EventsFactory.eINSTANCE.create«name»();
+      e.setType(event_t.«name.toUpperCase().replaceAll("EVENT","")».getValue());
+      e.setTimestamp(_currentTimestamp());
+      «EXPAND set_att_from_param FOREACH EAllAttributes.select(e|e.name != "type" && e.name != "timestamp")-»
+      return e;
+   }
+   «REM»«EXPAND parameters_and_types FOREACH EOperations.select(e|e.name == e.EContainingClass.name)-»«ENDREM»
+   «REM»«EXPAND atts_name_and_type FOREACH EAttributes.select(e|e.name != "type" && e.name != "timestamp")-»«ENDREM»
+«ENDDEFINE»
+
+«REM» Adapter to add all the attribute param_names and types «ENDREM»
+«DEFINE atts_param_name_and_type FOR List[EAttribute]»
+ «getAttributeParamNamesAndTypes()-»
+«ENDDEFINE»
+
+«REM» Adapter to set all the additional params «ENDREM»
+«DEFINE set_att_from_param FOR EAttribute»
+ «setAttFromParam()-»
+«ENDDEFINE»
+
+«REM» «ENDREM»
+«REM» «ENDREM»
+«REM» «ENDREM»
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+«REM» Adapter to add all the parameters of the constructor, including their types «ENDREM»
+«DEFINE parameters_and_types FOR EOperation»
+«getParametersAndType()-»
+«ENDDEFINE»
+
+«REM» Adapter to add all the attribute names and types «ENDREM»
+«DEFINE atts_name_and_type FOR List[EAttribute]»
+ «getAttributeNamesAndTypes()-»
+«ENDDEFINE»
+
+
+
+«REM» Adapter to add all the attribute names and types «ENDREM»
+«DEFINE atts_name FOR List[EAttribute]»
+ «getAttributeNames()-»
+«ENDDEFINE»

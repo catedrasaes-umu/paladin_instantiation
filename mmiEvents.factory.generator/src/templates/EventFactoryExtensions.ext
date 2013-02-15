@@ -1,0 +1,75 @@
+import org::eclipse::emf::ecore;
+
+/*
+ *
+ */
+String getParametersType(List[EParameter] this):
+        if isEmpty then
+                ""
+        else if size == 1 then
+                this.first().EType.name // + " " + this.first(). name
+        else
+                this.first().EType.name /* + " " + this.first().name*/ + "," + withoutFirst().getParametersType()
+;
+
+/*
+ *
+ */
+String getParametersAndType(EOperation this) :
+        // constructor
+        if this.name == this.EContainingClass.name then
+            "-ped-" + this.EParameters.getParametersType() + "-ped-"
+        else
+            "asdasd"
+;
+
+/*
+ *
+ */
+String getAttributeNamesAndTypes(List[EAttribute] this):
+        if isEmpty then
+                ""
+        else if size == 1 then
+                this.first().EType.instanceTypeName  + " " + this.first(). name
+        else
+                this.first().EType.instanceTypeName  + " " + this.first().name + ", " + withoutFirst().getAttributeNamesAndTypes()
+;
+
+/*
+ *
+ */
+String getAttributeParamNamesAndTypes(List[EAttribute] this):
+        if isEmpty then
+                ""
+        else if size == 1 then
+                this.first().EType.instanceTypeName  + " p_" + this.first(). name
+        else
+                this.first().EType.instanceTypeName  + " p_" + this.first().name + ", " + withoutFirst().getAttributeNamesAndTypes()
+;
+
+/*
+ *
+ */
+String getAttributeNames(List[EAttribute] this):
+        if isEmpty then
+                ""
+        else if size == 1 then
+                this.first(). name
+        else
+                this.first().name + ", " + withoutFirst().getAttributeNames()
+;
+
+/*
+ *
+ */
+String _getSetter(EAttribute this) : 
+    "set" + this.name.toFirstUpper()
+;
+
+/*
+ *
+ */
+String setAttFromParam(EAttribute this):
+        "e." + this._getSetter() + "(p_" + this.name + ");"
+;
+

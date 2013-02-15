@@ -1,0 +1,45 @@
+module workflow.Generate
+
+import org.eclipse.emf.mwe.utils.*
+import org.eclipse.xpand2.Generator
+import org.eclipse.xtend.type.impl.java.JavaBeansMetaModel
+
+// FIXME: Esto debería ser platform:/resource/org.csu... pero no me funciona así.
+var modelFile = "../mmiEvents.emf/model/mmiEvents.ecore"
+var fileEncoding = "UTF-8"
+var targetDir = "src-gen/org/mmi/events/factory"
+
+Workflow {
+/*
+        component = DirectoryCleaner {
+                directory = targetDir
+        }
+*/
+      /* bean = StandaloneSetup {
+            registerGeneratedEPackage = "mmiEvents.factory"
+            platformUri = "."
+        }*/
+
+        component = Reader {
+                uri = modelFile
+                modelSlot = "model"
+        }
+
+        component = Generator {
+                expand = "templates::EventFactoryTemplate::main FOR model"
+                metaModel = JavaBeansMetaModel {}
+                outlet = {
+                        path = targetDir
+                        
+                        // Por si quereis el embellecedor de codigo C++
+                        // postprocessor = org.csu.cpp.output.CppBeautifier {}
+                        postprocessor = org.eclipse.xpand2.output.JavaBeautifier {}
+                }
+                
+                
+                fileEncoding = fileEncoding
+
+                // Por si quereis usar regiones protegidas
+                // prSrcPaths = "${targetDir}"
+        }
+}

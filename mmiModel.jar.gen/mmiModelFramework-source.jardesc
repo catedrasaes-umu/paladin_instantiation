@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<jardesc>
+    <jar path="mmiModel.jar.gen/org.mmi.model-source.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/mmiModel.jar.gen/mmiModelFramework-source.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="true"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <selectedElements exportClassFiles="false" exportJavaFiles="true" exportOutputFolder="false">
+        <javaElement handleIdentifier="=mmiModel.emf/src"/>
+        <file path="/mmiModel.jar.gen/version.txt"/>
+        <javaElement handleIdentifier="=mmiUtils/src&lt;org.mmi.utils"/>
+        <javaElement handleIdentifier="=mmiEvents.factory.generator/src-gen"/>
+        <javaElement handleIdentifier="=mmiModel.instantiator/src"/>
+        <javaElement handleIdentifier="=mmiEvents.pool/src"/>
+        <javaElement handleIdentifier="=mmiEvents.emf/src"/>
+        <javaElement handleIdentifier="=mmiFacade/src"/>
+    </selectedElements>
+</jardesc>

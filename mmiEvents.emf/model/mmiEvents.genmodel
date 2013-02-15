@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/mmiEvents.emf/src"
+    modelPluginID="mmiEventsEmf" modelName="MmiEvents" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>mmiEvents.ecore</foreignModel>
+  <genPackages prefix="Events" basePackage="org.mmi" disposableProviderFactory="true"
+      ecorePackage="mmiEvents.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mmiEvents.ecore#//event_t">
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/TOUCH"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/CLICK"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/LONGCLICK"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/ITEMCLICK"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/ITEMLONGCLICK"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/SCROLL"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/MOVE"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/NAVIGATIONMOVE"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/NAVIGATIONLENGTH"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/NAVIGATIONACTION"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/NAVIGATIONEXPLORE"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/KEYTEXT"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/KEYEXPLORE"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/KEYCOMMAND"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/TEXTWORD"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/TEXTEXPLORE"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/TEXTCOMMAND"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/OVERALLWORDS"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/SUBSTITUTEDWORDS"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/DELETEDWORDS"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/INSERTEDWORDS"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/OVERALLSENTENCES"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/SUBSTITUTEDSENTENCES"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/DELETEDSENTENCES"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/INSERTEDSENTENCES"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/OVERALLCONCEPTS"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/SUBSTITUTEDCONCEPTS"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/DELETEDCONCEPTS"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/INSERTEDCONCEPTS"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/CORRECTLYPARSEDUTTERANCE"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/PARTIALLYPARSEDUTTERANCE"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/INCORRECTLYPARSEDUTTERANCE"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/FOCUSCHANGE"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/LAYOUTCHANGE"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/VISIBILITYCHANGE"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/CONTEXTMENU"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/DRAG"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/NEWELEMENTS"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/NEWFEEDBACKELEMENTS"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/NEWCONCEPTS"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/NEWNOISE"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/QUESTION"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/HELPTURN"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/CORRECTIONTURN"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/TIMEOUT"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/CANCELTURN"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/RESTARTTURN"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/BARGEIN"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/DIVREJECTION"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/ASRREJECTION"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/GRREJECTION"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/CORRECTANSWER"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/INCORRECTANSWER"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/PARTIALLYCORRECTANSWER"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/NOTANSWER"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/OPENPROMPT"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/HALFOPENPROMPT"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/CLOSEDPROMPT"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/NOQUESTIONPROMPT"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/APPSTART"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/APPEND"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/STARTDIALOGUE"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/ENDDIALOGUE"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/STARTSYSTEMTURN"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/SYSTEMFEEDBACKSTART"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/SYSTEMACTIONSTART"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/SYSTEMACTIONEND"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/ENDSYSTEMTURN"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/STARTUSERTURN"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/USERFEEDBACKSTART"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/USERACTIONSTART"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/USERACTIONEND"/>
+      <genEnumLiterals ecoreEnumLiteral="mmiEvents.ecore#//event_t/ENDUSERTURN"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="mmiEvents.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//Event/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//Event/timestamp"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mmiEvents.ecore#//InputEvent"/>
+    <genClasses image="false" ecoreClass="mmiEvents.ecore#//OutputEvent"/>
+    <genClasses image="false" ecoreClass="mmiEvents.ecore#//DialogueContentEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//DialogueContentEvent/nitems"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mmiEvents.ecore#//MetacommEvent"/>
+    <genClasses image="false" ecoreClass="mmiEvents.ecore#//TurnControlEvent"/>
+    <genClasses image="false" ecoreClass="mmiEvents.ecore#//TurnTimingEvent"/>
+    <genClasses image="false" ecoreClass="mmiEvents.ecore#//NavigationEvent"/>
+    <genClasses image="false" ecoreClass="mmiEvents.ecore#//TextEvent"/>
+    <genClasses image="false" ecoreClass="mmiEvents.ecore#//SpeechInputEvent"/>
+    <genClasses image="false" ecoreClass="mmiEvents.ecore#//ScreenEvent"/>
+    <genClasses image="false" ecoreClass="mmiEvents.ecore#//SpeechOutputEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//TouchEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//ClickEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//LongClickEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//ItemClickEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//ItemLongClickEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//ScrollEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//MoveEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//MoveEvent/length"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//NavigationMoveEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//NavigationLengthEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//NavigationLengthEvent/length"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//NavigationActionEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//NavigationExploreEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//KeyTextEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//KeyTextEvent/code"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//KeyExploreEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//KeyExploreEvent/code"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//KeyCommandEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//KeyCommandEvent/code"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//TextWordEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//TextExploreEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//TextCommandEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//FocusChangeEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//VisibilityChangeEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//ContextMenuEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//DragEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//CorrectAnswerEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//IncorrectAnswerEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//PartiallyCorrectAnswerEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//NotAnswerEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//OpenPromptEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//HalfOpenPromptEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//ClosedPromptEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//NoQuestionPromptEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//OverallWordsEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//OverallWordsEvent/nwords"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//SubstitutedWordsEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//SubstitutedWordsEvent/nwords"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//DeletedWordsEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//DeletedWordsEvent/nwords"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//InsertedWordsEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//InsertedWordsEvent/nwords"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//OverallSentencesEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//OverallSentencesEvent/nsentences"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//SubstitutedSentencesEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//SubstitutedSentencesEvent/nsentences"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//DeletedSentencesEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//DeletedSentencesEvent/nsentences"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//InsertedSentencesEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//InsertedSentencesEvent/nsentences"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//OverallConceptsEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//OverallConceptsEvent/nconcepts"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//SubstitutedConceptsEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//SubstitutedConceptsEvent/nconcepts"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//DeletedConceptsEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//DeletedConceptsEvent/nconcepts"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//InsertedConceptsEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//InsertedConceptsEvent/nconcepts"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//CorrectlyParsedUtteranceEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//PartiallyParsedUtteranceEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//IncorrectlyParsedUtteranceEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//NewElementsEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//NewFeedbackElementsEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//NewConceptsEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//NewNoiseEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//QuestionEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//HelpTurnEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//CorrectionTurnEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//CancelTurnEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//RestartTurnEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//BargeinEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mmiEvents.ecore#//BargeinEvent/successful"/>
+    </genClasses>
+    <genClasses ecoreClass="mmiEvents.ecore#//DIVRejectionEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//ASRRejectionEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//GRRejectionEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//TimeoutEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//AppStartEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//AppEndEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//StartDialogueEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//EndDialogueEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//StartSystemTurnEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//EndSystemTurnEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//StartUserTurnEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//EndUserTurnEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//SystemFeedbackStartEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//SystemActionStartEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//SystemActionEndEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//UserFeedbackStartEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//UserActionStartEvent"/>
+    <genClasses ecoreClass="mmiEvents.ecore#//UserActionEndEvent"/>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,67 @@
+import org::eclipse::emf::ecore;
+
+
+// String getClassName(EClass this) :
+//      name.toFirstUpper()
+// ;
+
+
+
+String getClassesName(List[EClass] this):
+        if isEmpty then
+                ""
+        else if this.first().abstract then
+                this.first().ESuperTypes.getClassesName()
+        else if size == 1 then
+                "," + this.first().name
+        else
+                "," + this.first().name + "," + withoutFirst().getClassesName()
+;
+
+String getParentClass(EClass this) :
+        getClassesName(this.ESuperTypes)
+        //this.ESuperTypes.getClassesName()
+;
+
+String getParametersType(List[EParameter] this):
+        if isEmpty then
+                ""
+        else if size == 1 then
+                this.first().EType.name // + " " + this.first(). name
+        else
+                this.first().EType.name /* + " " + this.first().name*/ + "," + withoutFirst().getParametersType()
+;
+
+
+/*
+String getCPPSignature(List[EParameter] this) :
+ if isEmpty then
+  ""
+ else
+  if size == 1 then
+   " " + first().getCPPParameterSignature()
+  else
+   " " + first().getCPPParameterSignature()+ "," + withoutFirst().getCPPSignature()
+;
+
+String getCPPSignature(EOperation this, String preffix) :
+ getCPPTypeSignature() + " " + preffix + name + " (" + getCPPSignature(EParameters) + ")"
+;
+*/
+
+String getMethodBindingDefinition(EOperation this) :
+        // constructor
+        if this.name == this.EContainingClass.name then
+                ".def(luabind::constructor<" + this.EParameters.getParametersType() + ">())"
+        // QString returning type
+        else if EType.name == "QString" then
+        ".def(\"" + this.name + "\", luabind::tag_function<std::string(const " + this.EContainingClass.name +" *)>(&QtLua_Adapters::" + this.EContainingClass.name + "_" + "$"
+        // others
+        else
+                ".def(\"" + this.name + "\", &" + this.EContainingClass.name + "::" + this.name + ")"
+;
+
+
+String getMemberBindingDefinition(EReference this) :
+        ".def_readwrite(\"" + this.name + "\", &" + this.EContainingClass.name + "::" + this.name + ")"
+;
